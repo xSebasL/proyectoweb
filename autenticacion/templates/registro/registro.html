@@ -1,0 +1,17 @@
+{% extends "proyectowebapp/base.html" %}
+
+{% load static %}
+{% block custom_style %}
+<link href="{% static 'proyectowebapp/css/registro.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<main class="content">
+  <form class="form-sign-up" method="POST" action="">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="form-sign-up__button-submit">Registrarse</button>
+  </form>
+</main>
+
+{% endblock %}

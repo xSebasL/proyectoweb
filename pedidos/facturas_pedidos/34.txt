@@ -1,0 +1,7 @@
+Nombre de usuario: sebasl
+ID pedido: 34
+Fecha pedido: 2024-06-02 15:54:50.838489+00:00
+Productos:
+Producto: Taladro --- Cantidad: 1 --- Precio: 70.0
+Producto: Camiseta --- Cantidad: 1 --- Precio: 25.0
+Total: 95.0

@@ -1,0 +1,45 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-sign-up{
+  width: 70%;
+  border: 2px solid #333c;
+  border-radius: 1rem;
+  background-color: #ccc3;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.form-sign-up__button-submit{
+  color: #ccc;
+  background-color: #333c;
+  border-radius: .5rem;
+  width: min-content;
+  padding: .2rem .5rem;
+  border: none;
+  align-self: center;
+}
+
+.form-sign-up input[type="text"],
+.form-sign-up input[type="password"]{
+  background-color: #333c;
+  border-radius: .5rem;
+  border: none;
+  padding: .2rem 0;
+  color: #ccc;
+}
+
+.form-sign-up .helptext{
+  /*display: none;*/
+}
+
+.errorlist{
+  color: #c00;
+}

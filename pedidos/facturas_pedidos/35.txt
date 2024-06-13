@@ -1,0 +1,6 @@
+Nombre de usuario: sebasl
+ID pedido: 35
+Fecha pedido: 2024-06-02 15:55:04.464074+00:00
+Productos:
+Producto: Camiseta --- Cantidad: 1 --- Precio: 25.0
+Total: 25.0

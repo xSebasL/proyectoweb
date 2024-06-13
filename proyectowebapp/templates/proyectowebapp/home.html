@@ -1,0 +1,39 @@
+{% extends "proyectowebapp/base.html" %}
+{% load static %}
+
+{% block custom_style %} 
+  <link href="{% static 'proyectowebapp/css/home.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+<main class="content">
+
+  <!-- Heading -->
+  <section class="presentation">
+    <div class="presentation__img-container">
+      <img src="{% static 'proyectowebapp/img/principal.jpg'%}" alt="entrega de producto">
+    </div>
+    <div class="presentation__description-container">
+      <h2 class="presentation__title">
+        <span class="presentation__title1">Puntualidad</span>
+        <span class="presentation__title2">El mejor stock</span>
+      </h2>
+      <p class="presentation__text">
+        En la puerta de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Message -->
+  <section class="experience">
+    <div class="experience__container">
+      <h2 class="experience__title">
+        <span class="experience__title1">Compromiso total</span>
+        <span class="experience__title2">Garantizado</span>
+      </h2>
+      <p class="experience__text">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="utf-8"/>
+  <!-- Styles -->
+  <link href="{% static 'proyectowebapp/css/index.css'%}" rel="stylesheet">
+  {% block custom_style %} {% endblock custom_style %}
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="main-header">
+    <div class="authentication">
+      {% if user.is_authenticated %}
+      <span>Hola {{user.username}}</span>
+      <button class="authentication__logout"><a href="{% url "cerrar_sesion" %}">Cerrar sesion</a></button>
+      {% else %}
+      <span>No autenticado</span>
+      <button class="authentication__sign-up"><a href="{% url "sign_up" %}">Sign Up</a></button>
+      <button class="authentication__login"><a href="{% url "login" %}">Login</a></button>
+      {% endif %}
+    </div>
+    <h1 class="main-title">Gestión de Pedidos</h1>
+    <nav class="navbar">
+      <div class="navbar-desktop">
+        <ul>
+          <li class="{% if request.path == '/' %} active {% endif %}">
+            <a href="{% url 'home' %}">Inicio</a>
+          </li>
+          <li class="{% if request.path == '/servicios/' %} active {% endif %}">
+            <a href="{% url 'servicios' %}">Servicios</a>
+        </li>
+        <li class="{% if request.path == '/tienda/' %} active {% endif %}">
+          <a href="{% url 'tienda' %}">Tienda</a>
+        </li>
+        <li class="{% if request.path == '/contacto/' %} active {% endif %}">
+          <a href="{% url 'contacto' %}">Contacto</a>
+        </li>
+        <li class="{% if request.path|slice:':6' == '/blog/' %} active {% endif %}">
+          <a href="{% url 'blog' %}">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  {% block main %} {% endblock main %}
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__legal">
+      <a href="#">Política de privacidad</a>
+      <a href="#">Aviso legal</a>
+      <a href="#">Cookies</a>
+    </div>
+    <p class="footer__copy">&copy; Gestión de Pedidos 2024 - pildorasinformaticas</p>
+	</footer>
+  <script src="{% static 'proyectowebapp/js/main.js'%}"></script>
+</body>
+</html>

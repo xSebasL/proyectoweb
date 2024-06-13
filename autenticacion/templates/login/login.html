@@ -1,0 +1,22 @@
+{% extends "proyectowebapp/base.html" %}
+
+{% load static %}
+{% block custom_style %}
+<link href="{% static 'proyectowebapp/css/login.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<main class="content">
+  <form class="form-login" method="POST" action="">
+    {% csrf_token %}
+    {{form}}
+    {% if messages %}
+    {% for mensaje in messages %}
+      <span class="form-login__messages">{{mensaje}}</span>
+    {% endfor %}
+    {% endif %}
+    <button type="submit" class="form-login__button-submit">Entrar</button>
+  </form>
+</main>
+
+{% endblock %}

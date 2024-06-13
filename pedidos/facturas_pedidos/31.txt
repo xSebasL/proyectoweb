@@ -1,0 +1,9 @@
+Nombre de usuario: sebasl
+ID pedido: 31
+Fecha pedido: 2024-06-02 15:46:28.279030+00:00
+Productos:
+Producto: Taladro --- Cantidad: 1 --- Precio: 70.0
+Producto: Camiseta --- Cantidad: 3 --- Precio: 75.0
+Producto: Balon de futbol --- Cantidad: 2 --- Precio: 90.0
+Producto: Balon de baloncesto --- Cantidad: 1 --- Precio: 35.0
+Total: 270.0

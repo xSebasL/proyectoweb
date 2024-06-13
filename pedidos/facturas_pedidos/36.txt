@@ -1,0 +1,7 @@
+Nombre de usuario: sebasl
+ID pedido: 36
+Fecha pedido: 2024-06-02 15:59:54.857394+00:00
+Productos:
+Producto: Balon de futbol --- Cantidad: 1 --- Precio: 45.0
+Producto: Taladro --- Cantidad: 1 --- Precio: 70.0
+Total: 115.0

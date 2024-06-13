@@ -1,0 +1,41 @@
+{% extends "proyectowebapp/base.html" %}
+
+{% load static %}
+{% block custom_style %}
+<link href="{% static 'proyectowebapp/css/blog.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<main class="content">
+  <section class="posts">
+    {% for post in posts %}
+    <article class="post">
+      {% if post.imagen %}
+      <div class="post__img-container">
+        <img src="{{post.imagen.url}}" alt="{{post.titulo}}">
+      </div>
+      {% endif %}
+      <div class="categories-container">
+        {% for categorie in post.categorias.all %}
+        <p class="categorie"><a href="{% url "categoria" categorie.id %}">{{categorie.nombre}}</a></p>
+        {% endfor %}
+      </div>
+      <div class="post__description-container">
+        <h2 class="post__title">{{post.titulo}}</h2>
+        <p class="post__content">{{post.contenido}}</p>
+      </div>
+      <div class="post_author">Autor: {{post.autor}}</div>
+    </article>
+    {% endfor %}
+  </section>
+  <section class="categories">
+    Categorias:
+    <div class="categories-container">
+    {% for categorie in categorias %}
+      <p class="categorie"><a href="{% url "categoria" categorie.id %}">{{categorie.nombre}}</a></p>
+    {% endfor %}
+      <p class="categorie"><a href="{% url "blog" %}">all</a></p>
+    </div>
+  </section>
+</main>
+{% endblock %}

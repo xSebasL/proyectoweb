@@ -1,0 +1,43 @@
+<table class="car-table">
+  <thead>
+    <tr>
+      <th colspan="3">Carro compras</th>
+    </tr>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Suma</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if request.session.carro.items %}
+    {% for key,value in request.session.carro.items %}
+    <tr>
+      <td>{{value.nombre}}</td>
+      <td>{{value.cantidad}}</td>
+      <td class="car-table__td-buttons">
+        <button class="car-table__button-agregar"><a href="{% url 'carro:agregar' value.producto_id %}">+</a></button>
+        <button class="car-table__button-restar"><a href="{% url 'carro:restar' value.producto_id %}">-</a></button>
+        <p class="car-table__precio-unidad">${{value.precio}}</p>
+      </td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+      <td colspan="3"><div class="car-table__without-products">Sin productos</div></td>
+    </tr>
+    {% endif %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">Total: ${{importe_total_carro}}</td>
+    </tr>
+    {% if request.session.carro.items %}
+    <tr>
+      <td colspan="3">
+        <button class="car-table__button-pedido"><a href="{% url "procesar_pedido" %}">Realizar pedido</a></button>
+      </td>
+    </tr>
+    {% endif %}
+  </tfoot>
+</table>

@@ -1,0 +1,47 @@
+{% extends "proyectowebapp/base.html" %}
+
+{% load static %}
+{% block custom_style %}
+<link href="{% static 'proyectowebapp/css/tienda.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<main class="content">
+  {% if request.user.is_authenticated %}
+  <section class="productos">
+    {% for producto in productos %}
+    <article class="producto">
+      <div class="producto__img-container">
+        <img src="{{producto.imagen.url}}" alt="{{producto.nombre}}">
+      </div>
+      <div class="producto__description-container">
+        <h2 class="producto__title">{{producto.nombre}}</h2>
+        <p class="producto__precio">Precio: ${{producto.precio}}</p>
+        <div class="categories-container">
+          <p class="categorie"><a href="{% url 'categoria' producto.categoria.id %}">{{producto.categoria.nombre}}</a></p>
+        </div>
+      </div>
+      <button class="button-car"><a href="{% url 'carro:agregar' producto.id %}">Agregar al carrito</a></button>
+    </article>
+    {% endfor %}
+  </section>
+  <section class="categories">
+    Categorias:
+    <div class="categories-container">
+      {% for categorie in categorias %}
+      <p class="categorie"><a href="{% url "categoria" categorie.id %}">{{categorie.nombre}}</a></p>
+      {% endfor %}
+    </div>
+    <p class="categorie"><a href="{% url "tienda" %}">all</a></p>
+  </section>
+  <aside class="car">
+    {% include "carro/carro.html" %}
+    {% for mensaje in messages %}
+      <div class="car__messages">{{mensaje}}</div>
+    {% endfor %}
+  </aside>
+  {% else %}
+  <h2>Se debe hacer login para ver la tienda</h2>
+  {% endif %}
+</main>
+{% endblock %}

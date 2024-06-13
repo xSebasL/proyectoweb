@@ -1,0 +1,9 @@
+Nombre de usuario: sebasl
+ID pedido: 29
+Fecha pedido: 2024-06-02 07:30:22.845043+00:00
+Productos:
+Producto: Destornillador --- Cantidad: 1
+Producto: Camiseta --- Cantidad: 2
+Producto: Balon de futbol --- Cantidad: 1
+Producto: Balon de baloncesto --- Cantidad: 1
+Total: 145.0

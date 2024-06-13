@@ -1,0 +1,22 @@
+{% extends "proyectowebapp/base.html" %}
+
+{% load static %}
+{% block custom_style %}
+<link href="{% static 'proyectowebapp/css/servicios.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<main class="content">
+  {% for servicio in servicios %}
+  <section class="service">
+    <div class="service__img-container">
+      <img src="{{servicio.imagen.url}}" alt="{{servicio.titulo}}">
+    </div>
+    <div class="service__description-container">
+      <h2 class="service__title">{{servicio.titulo}}</h2>
+      <p class="service__content">{{servicio.contenido}}</p>
+    </div>
+  </section>
+  {% endfor %}
+</main>
+{% endblock %}
