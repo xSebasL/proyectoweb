@@ -26,6 +26,8 @@
 .post__img-container img{
   width: 100%;
   border-radius: 1rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .categories-container{
